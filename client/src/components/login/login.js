@@ -95,9 +95,12 @@ function UserForm({ touched, errors }) {
 //   }
 
   return (
-    <Form>
+    <div className='login-page'>
+       <img src='https://via.placeholder.com/60'/> 
+       <h3>WELCOME BACK</h3>   
+    <Form className='login-form'>
     <label htmlFor = "username">username</label>
-    <Field id="username" type="username" autocomplete="off" placeholder="username" name = "username"/>
+    <Field className='login-input' id="username" type="username" autocomplete="off" placeholder="username" name = "username"/>
      <H5>{touched.username && errors.username}</H5>
     <label htmlFor = "password">password</label>
     <Field id="password" type="password" autocomplete="off" placeholder="password" name= "password"/>
@@ -109,7 +112,8 @@ function UserForm({ touched, errors }) {
     <Field id="rememberPassword" type="checkbox" name="rememberPassword"/>
     <H5>{touched.rememberPassword && errors.rememberPassword}</H5> */}
     <button type="submit">Login</button>
- </Form> 
+ </Form>
+ </div> 
   );
 }
 

@@ -5,7 +5,7 @@ function Home () {
     return (
         <div className='home-container'>
             <div className='nav-container'>
-               <NavLink to='/login'><h1>Sign In</h1></NavLink>
+               <NavLink to='/login'><button>Sign In</button></NavLink>
                <NavLink to='/registration'><button>Join</button></NavLink>
             </div>
 

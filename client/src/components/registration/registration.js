@@ -1,114 +1,52 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { Form, Field, withFormik } from 'formik';
-// import * as Yup from 'yup';
-// import axiosWithAuth from '../../utils/axiosWithAuth';
-
-// const Registration = ({ values, errors, touched, status }) => {
-    
-//     useEffect(() => {
-//         const [users, setUsers] = useState([]);
-//     useEffect(() => {
-//         if (status) {
-//             setUsers([...users, status])
-//         }
-//     }, [status]);
-
-//     return (
-//         <div>
-//             <Form>
-//             <div className='login-info'>
-//                     <h2>User Login</h2>
-//                     <label>
-//                         Username
-//                         {touched.name&& errors.name && <p className='error'>{errors.name}</p>}
-//                         <Field className='field-input' type='text' name='username' placeholder='Username' />
-//                     </label>
-//                     <label>
-//                         Email
-//                         {touched.email && errors.email && <p className='error'>{errors.email}</p>}
-//                         <Field className='field-input' type='email' name='email' placeholder='Email' />
-//                     </label>
-//                     <label>
-//                         Password
-//                         {touched.password && errors.password && <p className='error'>{errors.password}</p>}
-//                         <Field className='field-input' type='password' name='password' placeholder='Password' />
-//                     </label>
-//                 </div>
-//             </Form>
-//         </div>
-//     )
-// }
-
-// const FormikRegistration = withFormik({
-//     mapPropsToValues({ username, email, password }) {
-//         return {
-//             username: username || '',
-//             email: email || '',
-//             password: password || '',
-//         }
-//     },
-
-//     validationSchema: Yup.object().shape({
-//         username: Yup.string()
-//         .min(3, 'Must be 3 characters or more')
-//         .max(15, 'Must be less than 15 characters')
-//         .required('Username is required'),
-//         password: Yup.string()
-//         .min(3, 'Must be 3 characters or more')
-//         .max(18, 'Must be less than 18 characters')
-//         .required('Password is required'),
-//     }),
-
-//     handleSubmit(values, { resetForm, setStatus })  {
-//         axiosWithAuth
-//         .post('https://use-my-techstuff.herokuapp.com/api/auth/register', {
-//             username: values.username,
-//             email: values.email,
-//             password: values.password,
-//         })
-//         .then(response  => { 
-//             console.log(response.data)
-//             setStatus(response.data)
-//         })
-//         .catch(error => {
-//             console.log(error);
-//         });
-//         resetForm();
-//     }
-
-// })(Registration)
-
-// export default FormikRegistration
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import * as Yup from 'yup';
 
 const Registration = ({ values, errors, touched, status }) => {
 
     return (
-        <div>
-            <Form>
-                <div className='login-info'>
-                    <h2>Register</h2>
+        <div className='reg-page'>
+            <div className='reg-top'>
+            <img src='https://via.placeholder.com/60'/>
+            <h2>Join</h2>
+            </div>
+            <Form className='form'>
+                <div className='reg-form'>
                         <label>
-                            Username
-                            {touched.name&& errors.name && <p className='error'>{errors.name}</p>}
-                            <Field className='field-input' type='text' name='username' placeholder='Username' />
+                            Name
+                            {touched.username&& errors.name && <p className='error'>{errors.username}</p>}
+                            <Field className='reg-input' type='text' name='username' placeholder='Username' />
                         </label>
-                        {/* <label>
+                        <label>
                             Email
                             {touched.email && errors.email && <p className='error'>{errors.email}</p>}
-                            <Field className='field-input' type='email' name='email' placeholder='Email' />
-                        </label> */}
+                            <Field className='reg-input' type='email' name='email' placeholder='Email' />
+                        </label>
                         <label>
                             Password
                             {touched.password && errors.password && <p className='error'>{errors.password}</p>}
-                            <Field className='field-input' type='password' name='password' placeholder='Password' />
+                            <Field className='reg-input' type='password' name='password' placeholder='Password' />
                         </label>
-                        <button type='submit'>Submit</button>
+                        <label>
+                            Confirm Password
+                            {touched.passwordConfirmation && errors.passwordConfirmation && <p className='error'>{errors.confirmPassword}</p>}
+                            <Field className='reg-input' type='password' name='confirmPassword' placeholder='Password' />
+                        </label>
+                        <label >
+                           <p>Birthday *We require all our users to be 18 or older.</p>
+                            {touched.birthday && errors.birthday && <p className='error'>{errors.birthday}</p>}
+                            <Field className='bday' type="date" name="birthday" />
+                        </label>
+                        <div className='checkbox'>
+                        
+                            <Field type='checkbox' name='tos' checked={values.tos} />
+                           <p>I agree to the Terms and Conditions</p>
+                        
+                        </div>
+                        <button type='submit'>Join</button>
                 </div>
             </Form>
         </div>
@@ -116,11 +54,14 @@ const Registration = ({ values, errors, touched, status }) => {
 }
 
 const FormikUserForm = withFormik({
-    mapPropsToValues({ username, email, password }) {
+    mapPropsToValues({ username, email, password, birthday }) {
         return {
             username: username || '',
-            // email: email || '',
+            email: email || '',
+            // tos: tos || false,
             password: password || '',
+            confirmPassword: '',
+            birthday: birthday
         };
     },
 
@@ -128,20 +69,24 @@ const FormikUserForm = withFormik({
         username: Yup.string()
         .min(6, 'First and last name required')
         .required('Name is required'),
-        // email: Yup.string()
-        // .email('Email not valid')
-        // .required('Email is required'),
+        email: Yup.string()
+        .email('Email not valid')
+        .required('Email is required'),
         password: Yup.string()
         .min(8, 'Password must be 8 character or longer')
         .required('Password is required'),
+        birthday: Yup.string()
+        .required('Birthdate is required'),
     }),
 
     handleSubmit(values, { resetForm, setStatus })  {
         axios
         .post('https://use-my-techstuff.herokuapp.com/api/auth/register', {
             username: values.username,
-            // email: values.email,
+            email: values.email,
             password: values.password,
+            birthday: values.birthday
+            // tos: values.tos,
         })
         .then(response  => { 
             console.log(response.data)
