@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import UserForm from './components/login/login';
+import Registration from './components/registration/registration';
+import Home from './components/pages/home';
+import './App.css'
 
 // const ProtectedRoute = ({component: Component, ...rest}) => {
 //   // const propsWithoutComponent = {...props, component: undefined};
@@ -20,9 +23,14 @@ import UserForm from './components/login/login';
 function App() {
   return (
     <div className="App">
-      <UserForm />
-      {/* <Route path="/login" component={UserForm} /> */}
+      <Switch>
+      {/* <UserForm /> */}
+      {/* <Registration /> */}
+      <Route exact path='/' component={Home} />
+      <Route path="/login" component={UserForm} />
+      <Route path="/registration" component={Registration} />
       {/* <ProtectedRoute path="/friends" component={Friends}/> */}
+      </Switch>
     </div>
   );
 }
