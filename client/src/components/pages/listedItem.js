@@ -1,18 +1,33 @@
 import React from 'react';
-import StarRatingComponent from 'react-star-rating-component';
-import Calendar from 'react-calendar/dist/entry.nostyle'; 
+import StarRatingComponent from 'react-star-rating-component'; 
+import DayPicker, { DateUtils } from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
 class ListedItem extends React.Component {
     constructor() {
         super();
-     
+        this.handleDayClick = this.handleDayClick.bind(this);
         this.state = {
           rating: 1,
           date: new Date(),
+          selectedDays: [],
         };
       }
 
       onChange = date => this.setState({ date })
+
+      handleDayClick(day, { selected }) {
+        const { selectedDays } = this.state;
+        if (selected) {
+          const selectedIndex = selectedDays.findIndex(selectedDay =>
+            DateUtils.isSameDay(selectedDay, day)
+          );
+          selectedDays.splice(selectedIndex, 1);
+        } else {
+          selectedDays.push(day);
+        }
+        this.setState({ selectedDays });
+      }
      
       onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue});
@@ -30,6 +45,8 @@ class ListedItem extends React.Component {
                 </div>
                 <div className='item-rating'>
                     <StarRatingComponent
+                        selectedDays={this.state.selectedDays}
+                        onDayClick={this.handleDayClick}
                         name="rate1" 
                         starCount={5}
                         value={rating}
@@ -56,9 +73,9 @@ class ListedItem extends React.Component {
             <h3>Select Days</h3>
             <div className='calendar'>
                 <main className='calendar-content'>
-                <Calendar
-                    onChange={this.onChange}
-                    value={this.state.date}
+                <DayPicker
+                    selectedDays={this.state.selectedDays}
+                    onDayClick={this.handleDayClick}
                 />
                 </main>
             </div>

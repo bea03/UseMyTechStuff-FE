@@ -52,3 +52,39 @@ export const addUser = addUser => dispatch => {
     dispatch({type: REGISTRATION_FAILURE, payload: err.response})
   })
 }
+
+// Get Item
+
+export const FETCH_START = "FETCH_START";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAILURE = "FETCH_FAILURE";
+
+export const fetchItem = () =>dispatch => {
+  dispatch({ type: FETCH_START});
+  axiosWithAuth()
+    .get(`/techstuff/items` )
+    .then(res => {
+      console.log('fetched items', res)
+      dispatch({type:FETCH_SUCCESS, payload:res.data})
+    })
+    .catch(err => {
+      dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+}
+
+// Add Action
+export const ADD_START ="ADD_START";
+
+export const addItem = (index) => dispatch => {
+  dispatch({ type: ADD_START });
+  axiosWithAuth()
+  .post(`techstuff/items`, index)
+  .then(res => {
+    console.log('added item', res.data)
+    dispatch({type: FETCH_SUCCESS, payload: res.data})
+    return true
+  })
+  .catch (err =>{
+    dispatch({type: FETCH_FAILURE})
+  });
+}

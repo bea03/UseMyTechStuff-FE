@@ -276,19 +276,8 @@ button {
   background: #dad9d9;
 }
 
-.calendar-content button {
-  background: #fff;
-  color: #000;
-  cursor: pointer;
-} 
-
-.calendar-content button:hover {
-  background: #CDCDD7;
-}
-
-.calendar-content button:focus {
-  background: #2F2F39;
-  color: #fff;
+.calendar {
+  margin: auto;
 }
 
 .item-message {
@@ -305,4 +294,31 @@ button {
   border-radius: 50%;
 }
 
+/* Item Card */
+.item-card {
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.item-card img {
+  width: 100px;
+  height: 100px;
+}
+
+/*Carousel*/
+
+div.new_html_code {
+  width: 150px;
+  height:100px;
+  min-width:150px;
+  min-height:100px;
+  max-width:200px;
+  max-height:100px;
+  overflow:hidden;
+  display:block;
+  border:1px solid red;
+}
