@@ -1,11 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Form, Field, withFormik } from 'formik';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import * as Yup from 'yup';
+import React, {useState} from 'react';
+import { connect } from 'react-redux'
+import { addUser } from '../../store/actions';
 
-const Registration = ({ values, errors, touched, status }) => {
+
+const Registration = (props) => {
+
+    const [user, setUser] = useState({
+        'username': '',
+        'email': '',
+        'password': '',
+        'confirmPassword': '',
+        'birthday': ''
+    })
+
+    const changeHandler = event => {
+        event.preventDefault();
+        console.log(event.target.value);
+        setUser({ ...user, [event.target.name]: event.target.value });
+      };
+    
+      const handleSubmit = event => {
+        event.preventDefault();
+      };
+    
+      const register = e => {
+        e.preventDefault();
+        props.addUser(user)
+        props.history.push('/protected');
+          console.log(props.history)
+      }
 
     return (
         <div className='reg-page'>
@@ -13,91 +36,41 @@ const Registration = ({ values, errors, touched, status }) => {
             <img src='https://via.placeholder.com/60'/>
             <h2>Join</h2>
             </div>
-            <Form className='form'>
+            <form className='form'>
                 <div className='reg-form'>
-                        <label>
-                            Name
-                            {touched.username&& errors.name && <p className='error'>{errors.username}</p>}
-                            <Field className='reg-input' type='text' name='username' placeholder='Username' />
-                        </label>
-                        <label>
-                            Email
-                            {touched.email && errors.email && <p className='error'>{errors.email}</p>}
-                            <Field className='reg-input' type='email' name='email' placeholder='Email' />
-                        </label>
-                        <label>
-                            Password
-                            {touched.password && errors.password && <p className='error'>{errors.password}</p>}
-                            <Field className='reg-input' type='password' name='password' placeholder='Password' />
-                        </label>
-                        <label>
-                            Confirm Password
-                            {touched.passwordConfirmation && errors.passwordConfirmation && <p className='error'>{errors.confirmPassword}</p>}
-                            <Field className='reg-input' type='password' name='confirmPassword' placeholder='Password' />
-                        </label>
-                        <label >
-                           <p>Birthday *We require all our users to be 18 or older.</p>
-                            {touched.birthday && errors.birthday && <p className='error'>{errors.birthday}</p>}
-                            <Field className='bday' type="date" name="birthday" />
-                        </label>
-                        <div className='checkbox'>
-                        
-                            <Field type='checkbox' name='tos' checked={values.tos} />
-                           <p>I agree to the Terms and Conditions</p>
-                        
-                        </div>
-                        <button type='submit'>Join</button>
+                    <p className='reg-input'>
+                        <label>Username</label>
+                        <input type="text" name="username" onChange={changeHandler} value={user.username} required /></p>
+                    <p className='reg-input'>
+                        <label>Email</label>
+                        <input type="email" name="email" onChange={changeHandler} value={user.email} required/></p>
+                    <p className='reg-input'>
+                        <label>Password</label>
+                        <input type="text" name="password" onChange={changeHandler} value={user.password} required/>
+                    </p>
+                    <p className='reg-input'>
+                        <label>Confirm Password</label>
+                        <input type="text" name="confirmPassword" onChange={changeHandler} value={user.confirmPassword} required/>
+                    </p>
+                    <p className='bday'>
+                        <label>Birthday *We require all our users to be 18 or older.</label>
+                        <input type="date" name="birthday" onChange={changeHandler} value={user.birthday} required/>
+                    </p>
+                    <div className='checkbox'>
+                        <input type='checkbox' name='tos' />
+                        <p>I agree to the Terms and Conditions</p>
+                    </div>
+                        <button type='submit' onClick={register} >Join</button>
                 </div>
-            </Form>
+            </form>
         </div>
     )
 }
 
-const FormikUserForm = withFormik({
-    mapPropsToValues({ username, email, password, birthday }) {
-        return {
-            username: username || '',
-            email: email || '',
-            // tos: tos || false,
-            password: password || '',
-            confirmPassword: '',
-            birthday: birthday
-        };
-    },
+const mapStateToProps = state => ({
+    error: state.error,
+    addUser: state.addUser,
+    fetchingData: state.fetchingData
+  });
 
-    validationSchema: Yup.object().shape({
-        username: Yup.string()
-        .min(6, 'First and last name required')
-        .required('Name is required'),
-        email: Yup.string()
-        .email('Email not valid')
-        .required('Email is required'),
-        password: Yup.string()
-        .min(8, 'Password must be 8 character or longer')
-        .required('Password is required'),
-        birthday: Yup.string()
-        .required('Birthdate is required'),
-    }),
-
-    handleSubmit(values, { resetForm, setStatus })  {
-        axios
-        .post('https://use-my-techstuff.herokuapp.com/api/auth/register', {
-            username: values.username,
-            email: values.email,
-            password: values.password,
-            birthday: values.birthday
-            // tos: values.tos,
-        })
-        .then(response  => { 
-            console.log(response.data)
-            setStatus(response.data)
-        })
-        .catch(error => {
-            console.log(error);
-        });
-        resetForm();
-    }
-
-})(Registration)
-
-export default FormikUserForm
+  export default connect(  mapStateToProps, { addUser })(Registration);

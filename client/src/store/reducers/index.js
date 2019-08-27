@@ -1,37 +1,6 @@
-import {LOGIN_START,LOGIN_SUCCESS,LOGIN_FAILURE} from "../actions";
+import { combineReducers } from 'redux';
+import { loginReducer } from './loginReducer';
 
-const initialState = {
-    isLoadingLOGIN: false,
-    successLOGIN: false,
-    username: '',
-    password: ''
-}
-
-export const reducers = (state = initialState, action) => {
-    switch(action.type) {
-        case LOGIN_START:
-            return {
-                ...state,
-                isLoadingLOGIN: true,
-                successLOGIN: false
-            }
-        case LOGIN_SUCCESS:
-            return {
-                ...state,
-                isLoadingLOGIN: false,
-                successLOGIN: true,
-                username: action.payload,
-                password: action.payload
-            }
-        case LOGIN_FAILURE:
-            return {
-                ...state,
-              isloadingLOGIN: false,
-              successLOGIN: false,
-              username: "",
-              password:""
-            }
-        default:
-            return state
-    }
-}
+export default combineReducers({
+    loginReducer
+})

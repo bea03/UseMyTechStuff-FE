@@ -21,10 +21,10 @@ export const login = (username, password) => dispatch => {
       })
       .catch(res => {
 
-        logout(callback => {
-          console.log(username)
-          alert(res);
-        });
+        // logout(callback => {
+        //   console.log(username)
+        //   alert(res);
+        // });
         dispatch({
           type: LOGIN_FAILURE,
           payload: res.data
