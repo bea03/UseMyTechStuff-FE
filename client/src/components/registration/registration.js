@@ -33,10 +33,10 @@ const Registration = (props) => {
     return (
         <div className='reg-page'>
             <div className='reg-top'>
-            <img src='https://via.placeholder.com/60'/>
-            <h2>Join</h2>
+            <h4>umts</h4>
             </div>
             <form className='form'>
+            <h2>Join</h2>
                 <div className='reg-form'>
                     <p className='reg-input'>
                         <label>Username</label>
@@ -53,9 +53,11 @@ const Registration = (props) => {
                         <input type="text" name="confirmPassword" onChange={changeHandler} value={user.confirmPassword} required/>
                     </p>
                     <p className='bday'>
-                        <label>Birthday *We require all our users to be 18 or older.</label>
+                        <label>Birthday</label>
+                        <label>*We require all our users to be 18 or older.</label>
                         <input type="date" name="birthday" onChange={changeHandler} value={user.birthday} required/>
                     </p>
+                    <p></p>
                     <div className='checkbox'>
                         <input type='checkbox' name='tos' />
                         <p>I agree to the Terms and Conditions</p>

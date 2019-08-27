@@ -1,74 +1,56 @@
-import React from "react";
-//import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import styled from 'styled-components';
+import Links from '../links/Links.js';
+import { navData } from '../../data.js';
 
+const NavDiv = styled.div`
+    padding-top: 1.5rem;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
+
+const StyledSection = styled.section`
+  max-width: 500px;
+`;
+
+const StyledImg = styled.img`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  width: 75px;
+  height: 75px;
+`;
+
+const StyledHeader = styled.h3`
+  background-color: #086A27;
+  padding: .5rem;
+  color: #F6F6F8;
+  text-align: center;
+  margin: 1rem auto;
+  width: 85%;
+`;
 
 export default function NavPage() {
+  const [naviLinks, setNaviLinks] = useState(navData);
   return (
-    <section className="nav-page">
+    <StyledSection className="nav-page">
       <div className="nav-top">
-      <img
+      <StyledImg
         className="logo-image"
-        src='https://via.placeholder.com/75'
+        src='../../../img/logo-icon.png'
         alt="logo"
       />
-        <h3>What would you like to do?</h3>
+        <StyledHeader>What would you like to do?</StyledHeader>
       </div>
-      <div className="nav-box">
-        <div className="nav-options">
-          <img
-            className="icon-image"
-            src='../img/rent-item-icon.png'
-            alt="rent item icon"
-          />
-          <p>Rent Item</p>
-        </div>
+      <NavDiv className="nav-box">
 
-        <div className="nav-options">
-          <img
-            className="icon-image"
-            src='../img/lend-item-icon.png'
-            alt="lend item icon"
-          />
-          <p>Lend Item</p>
-        </div>
+      {naviLinks.map(links => <Links key={links.id} href={links.href} text={links.text} src={links.src} alt={links.alt} flex={links.flex} />)}
 
-        <div className="nav-options">
-          <img
-            className="icon-image"
-            src='../img/inbox-icon.png'
-            alt="Inbox icon"
-          />
-          <p>Inbox</p>
-        </div>
+      </NavDiv>
 
-        <div className="nav-options">
-          <img
-            className="icon-image"
-            src='../img/profile-icon.png'
-            alt="Profile icon"
-          />
-          <p>Profile</p>
-        </div>
-
-        <div className="nav-options">
-          <img
-            className="icon-image"
-            src='../img/explore-icon.png'
-            alt="Explore icon"
-          />
-          <p>Explore</p>
-        </div>
-
-        <div className="nav-options">
-          <img
-            className="icon-image"
-            src='../img/customer-icon.png'
-            alt="Customer Service icon"
-          />
-          <p>Customer Service</p>
-        </div>
-      </div>
-
-    </section>
+    </StyledSection>
   );
 }

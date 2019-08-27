@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -30,6 +30,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  background: #EA9703;
+  align-self: center;
+  /* width: 30%; */
+  padding: 0.5rem 2rem;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.button:hover {
+  background: #E8B409;
 }
 
 /* Home */
@@ -86,10 +102,8 @@
 }
 /* Registration */
 .reg-page {
-  background: #cccdd6;
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,23 +111,24 @@
 
 .reg-top {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.reg-top img {
-  align-self: flex-start;
-  margin: .5rem;
-  border-radius: 50%;
+.reg-top h4 {
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem 0.5rem;
+  background: #EAB602;
 }
 
-.reg-top h2 {
-  background: #08c827;
-  border: 1px solid #000;
+.form h2 {
+  margin: auto;
+  width: 40%;
+  background: #2F8449;
   padding: 0.5rem 2rem;
 }
 
 .form {
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -130,6 +145,7 @@
 }
 
 .reg-form p {
+  margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: .78rem;
 }
@@ -142,15 +158,7 @@
   align-items: flex-start;
 }
 
-.form button {
-  background: #08c827;
-  align-self: center;
-  width: 30%;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 1px 1px 5px #000;
-}
+
 
 .form button:hover {
   background: #088b27;
@@ -167,6 +175,9 @@
 }
 
 .reg-input input {
+  height: 2rem;
+  border: none;
+  background-color: #E4E5E9;
   width: 100%;
 }
 
@@ -217,48 +228,81 @@
   justify-content: flex-start;
 }
 
-/* NavPage */
-.nav-top .logo-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75px;
-  height: 75px;
-}
-
-.nav-top h3 {
-  background-color: #086A27;
-  padding: .5em;
-  color: #F6F6F8;
-  text-align: center;
-  margin: 1em auto;
-  width: 85%;
-}
-
-.nav-box {
+/* Item Page */
+.item-page {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2rem 1rem;
+}
+
+.item-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.item-sku {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-sku h3 {
+  margin-right: 2rem;
+}
+
+.item-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
-.nav-box .nav-options {
-  justify-content: center;
+.item-page button {
+  align-self: flex-end;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-info-list {
+  background: #dad9d9;
+  padding: 1rem 2rem;
+}
+
+.item-description {
+  margin: 2rem auto;
+  background: #dad9d9;
+}
+
+.calendar-content button {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+} 
+
+.calendar-content button:hover {
+  background: #CDCDD7;
+}
+
+.calendar-content button:focus {
+  background: #2F2F39;
+  color: #fff;
+}
+
+.item-message {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 49.75%;
-  margin-bottom: 2%;
+  justify-content: center;
+  margin: 2rem auto;
 }
 
-.nav-options img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-  height: 150px;
+.item-message img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 
-.nav-options p {
-  color: #E95A00;
-  text-align: center;
-}
+
