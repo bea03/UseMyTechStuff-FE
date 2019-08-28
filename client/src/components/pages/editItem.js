@@ -1,54 +1,56 @@
-import React, {Component} from "react"
-import { updateItem, fetchItem } from "../../store/actions";
-import {connect} from 'react-redux'
-import {NavLink} from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import axiosWitAuth from '../../utils/axiosWithAuth'
 
+const editingState = {
+    item: '',
+    description: '',
+    price: '',
+    category: '',
+}
 
-class EditItem extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            data: {
-                item:'',
-                description:'',
-                category:'',
-                price:'',
-            }
-        }
+const initialState = {
+    
+}
+
+export default function EditItem (props) {
+    const [stuff, setStuff] = useState(initialState)
+    useEffect(() => {
+        axiosWitAuth()
+        .get(`/techstuff/items/${props.match.params.id}`)
+        .then(res => setStuff(res.data))
+        .catch(err => console.log(err))
+    }, [props.match.params.id])
+
+    const handleChange = e => {
+        setStuff({...stuff, [e.target.name]: e.target.value})
     }
 
-    componentDidMount(){
-        this.props.fetchItem();
-        document.title = 'umts - Edit';
+  
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        axiosWitAuth()
+        .put(`/techstuff/${props.match.params.id}`, stuff)
+        .then(res => {
+            setStuff(editingState)
+            props.history.push(`/myitems`)
+        })
+        .catch(err => console.log(err))
     }
-
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.updateItem(this.state.data.id, this.state.data)
-       
-    };
-
-      handleChange = event => {
-        event.preventDefault();
-        this.setState({data: {...this.props.data, [event.target.name]: event.target.value} });
-      };
-     
-    render() {
-        console.log(this.state.data)
+    console.log(initialState)
     return (
-        <div>
-            <h1>Edit Item</h1>
-            <form onSubmit={this.handleSubmit}>
-                <span>
-                    <label>
-                        Name
-                        <input type="text" value={this.state.data.item} name="item" onChange = {this.handleChange} />
-                    </label>
-                </span>
+        <div className='updateContainer'>
+            <div className='update-top'>
+                <h4>umts</h4>
+            </div>
+            <h1>Update Item</h1>
+            <form className='update-form' onSubmit={handleSubmit}>
+                <input type='text' name='item' value={stuff.item} onChange={handleChange} placeholder='Name'></input>
+                <input type='text' name='description' value={stuff.description} onChange={handleChange} placeholder='Description'></input>
+                <input type='text' name='price' value={stuff.price} onChange={handleChange} placeholder='Price'></input>
+                <input type='text' name='category' value={stuff.category} onChange={handleChange} placeholder='Category'></input>
+                <button className='updateButton'>Update</button>
             </form>
-            <button type='submit'>Update</button>
         </div>
     )
 }
-}
-export default connect(null,{updateItem, fetchItem}) (EditItem);
