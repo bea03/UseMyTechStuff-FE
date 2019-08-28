@@ -1,0 +1,324 @@
+/* .App {
+  text-align: center;
+} */
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  background: #EA9703;
+  align-self: center;
+  /* width: 30%; */
+  padding: 0.5rem 2rem;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.button:hover {
+  background: #E8B409;
+}
+
+/* Home */
+.home-container {
+  width: 100vw;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-container button {
+  margin: 1rem 1rem;
+  width: 4rem;
+}
+
+.top-content {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top-content img {
+  width: 50%;
+  height: 50%;
+  width: auto;
+  border-radius: 50%;
+}
+
+.top {
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.top p {
+  padding: 0.5rem 1rem;
+  background: #cccccc;
+}
+
+.top input, button {
+  margin-top: 0.5rem;
+}
+
+.top input {
+  width: 20rem;
+}
+
+.top button {
+  width: 12rem;
+}
+/* Registration */
+.reg-page {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reg-top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reg-top h4 {
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem 0.5rem;
+  background: #EAB602;
+}
+
+.form h2 {
+  margin: auto;
+  width: 40%;
+  background: #2F8449;
+  padding: 0.5rem 2rem;
+}
+
+.form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.reg-form {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bday {
+  align-self: center;
+}
+
+.reg-form p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: .78rem;
+}
+
+.reg-form label {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+.form button:hover {
+  background: #088b27;
+  cursor: pointer;
+  color: #fff;
+}
+
+.form button:active {
+  box-shadow: none;
+}
+
+.reg-input { 
+  width: 100%;
+}
+
+.reg-input input {
+  height: 2rem;
+  border: none;
+  background-color: #E4E5E9;
+  width: 100%;
+}
+
+.checkbox {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Login */
+.login-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page img {
+  align-self: flex-start;
+  margin: .5rem;
+  border-radius: 50%;
+}
+
+.login-page h3 {
+  background: #cccccc;
+  border: 1px solid #000;
+  margin: 1rem 3rem;
+  padding: 1rem 0;
+}
+
+.login-form {
+  margin: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.login-form button {
+  align-self: center;
+  width: 30%;
+}
+
+.login-input {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Item Page */
+.item-page {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+}
+
+.item-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.item-sku {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-sku h3 {
+  margin-right: 2rem;
+}
+
+.item-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-page button {
+  align-self: flex-end;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-info-list {
+  background: #dad9d9;
+  padding: 1rem 2rem;
+}
+
+.item-description {
+  margin: 2rem auto;
+  background: #dad9d9;
+}
+
+.calendar {
+  margin: auto;
+}
+
+.item-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.item-message img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* Item Card */
+.item-card {
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-card img {
+  width: 100px;
+  height: 100px;
+}
+
+/*Carousel*/
+
+div.new_html_code {
+  width: 150px;
+  height:100px;
+  min-width:150px;
+  min-height:100px;
+  max-width:200px;
+  max-height:100px;
+  overflow:hidden;
+  display:block;
+  border:1px solid red;
+}
