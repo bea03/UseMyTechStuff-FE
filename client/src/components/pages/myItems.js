@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ItemCard from './itemCard';
 import { fetchItem } from '../../store/actions';
 import { connect } from 'react-redux';
+import {NavLink} from 'react-router-dom';
+import '../../styles/myItems.css';
 
 class MyItems extends Component {
     
@@ -14,6 +16,7 @@ class MyItems extends Component {
             <div className='myitems-page'>
                 <div className='myitems-top'>
             <h4>umts</h4>
+            <NavLink to='/protected'><button>Back</button></NavLink>
             </div>
             <h1>My Items</h1>
                 {this.props.data.map(stuff =>

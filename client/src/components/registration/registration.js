@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux'
 import { addUser } from '../../store/actions';
+import '../../styles/registration.css';
 
 
 const Registration = (props) => {
@@ -46,11 +47,11 @@ const Registration = (props) => {
                         <input type="email" name="email" onChange={changeHandler} value={user.email} required/></p>
                     <p className='reg-input'>
                         <label>Password</label>
-                        <input type="text" name="password" onChange={changeHandler} value={user.password} required/>
+                        <input type="password" name="password" onChange={changeHandler} value={user.password} required/>
                     </p>
                     <p className='reg-input'>
                         <label>Confirm Password</label>
-                        <input type="text" name="confirmPassword" onChange={changeHandler} value={user.confirmPassword} required/>
+                        <input type="password" name="confirmPassword" onChange={changeHandler} value={user.confirmPassword} required/>
                     </p>
                     <p className='bday'>
                         <label>Birthday</label>

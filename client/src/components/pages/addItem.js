@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import { addItem, fetchItem } from "../../store/actions";
 import {connect} from 'react-redux';
+import '../../styles/addItem.css';
 
 class AddItemForm extends Component {
     // constructor(props){
