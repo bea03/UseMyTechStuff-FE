@@ -5,6 +5,7 @@ import Links from '../links/Links.js';
 import { homeData, footerHome } from '../../data.js';
 import '../../styles/home.css';
 
+
 const NavDiv = styled.div`
     padding-top: 1.5rem;
     max-width: 500px;
@@ -34,7 +35,7 @@ function Home () {
             </div>
 
             <div className='top-content'>
-                
+
                 <div className='top'>
                     <h3>USE MY TECH STUFF</h3>
                     <input type='text' placeholder='SEARCH' />
@@ -42,10 +43,12 @@ function Home () {
                 </div>
             </div>
             <NavDiv className="home-nav-box">
-
-            {homeLinks.map(links => <Links key={links.id} text={links.text} href={links.href} src={links.src} alt={links.alt} flex={links.flex} />)}
-
+                {homeLinks.map(links => <Links key={links.id} text={links.text} href={links.href} src={links.src} alt={links.alt} flex={links.flex} />)}
             </NavDiv>
+            <div>
+                  <h1>textbox</h1>
+                  <img src='https://via.placeholder.com/125' alt="placeholder" />
+            </div>
             <NavDiv className="footer-nav-box">
             <StyledHeader>Would you like to list a tech product for rent?</StyledHeader>
             {footerLinks.map(links => <Links key={links.id} text={links.text} href={links.href} src={links.src} alt={links.alt} flex={links.flex}/>)}

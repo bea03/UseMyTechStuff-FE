@@ -55,7 +55,7 @@ const navData = [
       href: '#'
     }
   ];
-  
+
   const homeData = [
     {
       id: 0,
@@ -64,7 +64,7 @@ const navData = [
       alt: 'tv icon',
       text: "TV & Home Theater",
       flex: "32%",
-      href: ''
+      href: '/tv'
     },
     {
       id: 1,
@@ -73,7 +73,7 @@ const navData = [
       alt: 'computer icon',
       text: "Desktops & Laptops",
       flex: "32%",
-      href: '/item'
+      href: '/computer'
     },
     {
       id: 2,
@@ -82,7 +82,7 @@ const navData = [
       alt: 'camera icon',
       text: "Cameras & Videocameras",
       flex: "32%",
-      href: '#'
+      href: '/camera'
     },
     {
       id: 3,
@@ -91,7 +91,7 @@ const navData = [
       alt: 'fridge icon',
       text: "Appliances",
       flex: "32%",
-      href: '#'
+      href: '/appliance'
     },
     {
       id: 4,
@@ -100,7 +100,7 @@ const navData = [
       alt: 'music note icon',
       text: "Audio",
       flex: "32%",
-      href: '#'
+      href: '/audio'
     },
     {
       id: 5,
@@ -109,10 +109,10 @@ const navData = [
       alt: 'gadgets icon',
       text: "Gadgets",
       flex: "32%",
-      href: '#'
+      href: '/gadget'
     }
   ];
-  
+
   const footerHome = [
     {
       id: 0,
@@ -120,7 +120,7 @@ const navData = [
       alt: 'Profile icon',
       text: "Create Profile",
       flex: "32%",
-      href: '#'
+      href: '/registration'
       //will need a real link
     },
     {
@@ -137,9 +137,9 @@ const navData = [
       alt: 'list item icon',
       text: "List Item",
       flex: "32%",
-      href: '#'
+      href: '/add'
       //will need a real link
     }
   ]
-  
+
   export { navData, homeData, footerHome }
