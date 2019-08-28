@@ -103,3 +103,16 @@ export const updateItem = (id) => dispatch => {
     dispatch({ type: FETCH_FAILURE, payload: err.response})
   });
 }
+
+export const ITEM_DETAIL_START = 'ITEM_DETAIL_START';
+export const ITEM_DETAIL_SUCCESS = 'ITEM_DETAIL_SUCCESS';
+
+export const itemDetail = id => dispatch => {
+    dispatch ({type: ITEM_DETAIL_START});
+    axiosWithAuth()
+    .get(`/techstuff/${id}`)
+    .then(res => {
+        console.log(res)
+        dispatch({type: ITEM_DETAIL_SUCCESS, payload: res.data})
+    })
+}

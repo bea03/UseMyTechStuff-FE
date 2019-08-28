@@ -21,9 +21,9 @@ function App() {
         <Route path="/login" component={UserForm} />
         <Route path="/registration" component={Registration} />
         {/* <Route path='/list' component={ListItem} /> */}
-        <Route path='/item' component={ListedItem} />
+        <Route path='/item/:id' component={ListedItem} />
         <Route path='/myitems' component={MyItems} />
-        <Route path='/edit' component={EditItem} />
+        <Route path='/items/:id/edit' component={EditItem} />
         <Route path='/add' component={AddItem} />
         <Route path='/protected' component={NavPage} />
       </Switch>
