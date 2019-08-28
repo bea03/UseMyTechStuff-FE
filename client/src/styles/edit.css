@@ -1,0 +1,51 @@
+/* Edit Item */
+.updateContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .updateContainer h4 {
+    justify-self: flex-start;
+  }
+  
+  .updateContainer h1 {
+    align-self: center;
+    background: #2F8449;
+    padding: 1rem 2rem;
+  }
+  
+  .update-form {
+    width: 80%;
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 10px #000;
+  }
+  
+  .update-form input {
+    width: 80%;
+    margin: 1rem auto;
+    box-shadow: 1px 1px 5px black;
+  }
+  
+  .update-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .update-top button {
+    margin: 1rem 1rem 0 1rem;
+  }
+  
+  .update-top h4 {
+    text-align: center;
+    margin: 1rem 1rem 0 1rem;
+    padding: 1rem 0.5rem;
+    background: #EAB602;
+  }
+  

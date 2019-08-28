@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Links from '../links/Links.js';
 import { homeData, footerHome } from '../../data.js';
+import '../../styles/home.css';
 
 const NavDiv = styled.div`
     padding-top: 1.5rem;
@@ -25,16 +26,19 @@ function Home () {
     return (
         <div className='home-container'>
             <div className='nav-container'>
+            <h4>umts</h4>
+            <div>
                <NavLink to='/login'><button>Sign In</button></NavLink>
                <NavLink to='/registration'><button>Join</button></NavLink>
+               </div>
             </div>
 
             <div className='top-content'>
-                <img src='https://via.placeholder.com/150'/>
+                
                 <div className='top'>
-                    <p>USE MY TECH STUFF</p>
+                    <h3>USE MY TECH STUFF</h3>
                     <input type='text' placeholder='SEARCH' />
-                    <button>List your product for rent</button>
+                    <h3>What can we help you find?</h3>
                 </div>
             </div>
             <NavDiv className="home-nav-box">

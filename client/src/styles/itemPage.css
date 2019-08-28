@@ -1,0 +1,65 @@
+/* Item Page */
+.item-page {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+  }
+  
+  .item-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .item-sku {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .item-sku h3 {
+    margin-right: 2rem;
+  }
+  
+  .item-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .item-page button {
+    align-self: flex-end;
+  }
+  
+  .item-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .item-info-list {
+    background: #dad9d9;
+    padding: 1rem 2rem;
+  }
+  
+  .item-description {
+    margin: 2rem auto;
+    background: #dad9d9;
+  }
+  
+  .calendar {
+    margin: auto;
+  }
+  
+  .item-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+  
+  .item-message img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }

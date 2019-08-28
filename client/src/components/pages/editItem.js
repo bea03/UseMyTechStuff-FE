@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axiosWitAuth from '../../utils/axiosWithAuth'
+import {NavLink} from 'react-router-dom';
+import '../../styles/edit.css';
 
 const editingState = {
     item: '',
@@ -41,7 +43,8 @@ export default function EditItem (props) {
     return (
         <div className='updateContainer'>
             <div className='update-top'>
-                <h4>umts</h4>
+            <h4>umts</h4>
+                <NavLink to='/myitems'><button>Back</button></NavLink>
             </div>
             <h1>Update Item</h1>
             <form className='update-form' onSubmit={handleSubmit}>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
 import Links from '../links/Links.js';
-import { navData } from '../../data.js';
+import { navData } from '../../data.js'; 
 
 const NavDiv = styled.div`
     padding-top: 1.5rem;

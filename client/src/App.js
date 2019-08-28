@@ -10,7 +10,7 @@ import EditItem from './components/pages/editItem';
 import MyItems from './components/pages/myItems';
 import AddItem from './components/pages/addItem';
 // import PrivateRoute from './utils/authRouter';
-import './App.css'
+import './App.css' 
 
 function App() {
   

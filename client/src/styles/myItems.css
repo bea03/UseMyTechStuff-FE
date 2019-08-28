@@ -1,0 +1,27 @@
+/* My Items */
+.myitems-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .myitems-page h1 {
+    align-self: center;
+    background: #2F8449;
+    padding: 1rem 2rem;
+  }
+  
+  .myitems-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .myitems-top button {
+    margin: 1rem 1rem 0 1rem;
+  }
+  
+  .myitems-top h4 {
+    text-align: center;
+    margin: 1rem 1rem 0 1rem;
+    padding: 1rem 0.5rem;
+    background: #EAB602;
+  }

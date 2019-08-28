@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import styled from 'styled-components'
+import '../../styles/login.css';
 
 
 const H5 = styled.h5`
@@ -21,7 +22,7 @@ function UserForm({ touched, errors }) {
 
   return (
     <div className='login-page'>
-       <img src='https://via.placeholder.com/60'/> 
+       <h4>umts</h4> 
        <h3>WELCOME BACK</h3>   
     <Form className='login-form'>
     <label htmlFor = "username">username</label>

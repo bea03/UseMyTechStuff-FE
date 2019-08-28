@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { updateItem } from '../../store/actions';
 import {NavLink} from 'react-router-dom';
+import '../../styles/itemCard.css';
 
 const ItemCard = props => {
 
