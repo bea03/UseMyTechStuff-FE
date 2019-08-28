@@ -42,6 +42,7 @@ button {
   font-size: 1.2rem;
   border-radius: 2px;
   box-shadow: 1px 1px 5px #000;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -121,6 +122,7 @@ button {
 }
 
 .form h2 {
+  text-align: center;
   margin: auto;
   width: 40%;
   background: #2F8449;
@@ -157,8 +159,6 @@ button {
   flex-direction: column;
   align-items: flex-start;
 }
-
-
 
 .form button:hover {
   background: #088b27;
@@ -302,6 +302,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 2px 2px 10px #000;
 }
 
 .item-card img {
@@ -322,3 +323,91 @@ div.new_html_code {
   display:block;
   border:1px solid red;
 }
+
+/* Add Item */
+.add-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-form h4 {
+  align-self: flex-start;
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem 0.5rem;
+  background: #EAB602;
+  position: fixed;
+}
+
+.add-form select, input {
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.add-form label {
+  margin: auto;
+  width: 90%;;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-area {
+  height: 200px;
+}
+
+.add-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.add-buttons {
+  margin-bottom: 2rem;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-buttons a {
+  text-decoration: none;
+  background: #EA9703;
+  padding: 0.5rem 2rem;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.add-input {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+/* My Items */
+.myitems-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.myitems-page h1 {
+  align-self: center;
+  background: #2F8449;
+  padding: 1rem 2rem;
+}
+
+.myitems-top {
+  display: flex;
+}
+
+.myitems-top h4 {
+  text-align: center;
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem 0.5rem;
+  background: #EAB602;
+}
+

@@ -15,7 +15,7 @@ const navData = [
       alt: 'lend item icon',
       text: "Lend Item",
       flex: "49%",
-      href: '#'
+      href: '/add'
       //this will need a link per design files
     },
     {
@@ -43,7 +43,7 @@ const navData = [
       alt: 'explore icon',
       text: "My Items",
       flex: "49%",
-      href: '#'
+      href: '/myitems'
     },
     {
       id: 5,

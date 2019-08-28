@@ -59,10 +59,10 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 
-export const fetchItem = () =>dispatch => {
+export const fetchItem = getStuff =>dispatch => {
   dispatch({ type: FETCH_START});
   axiosWithAuth()
-    .get(`/techstuff/items` )
+    .get(`/techstuff/items`, getStuff )
     .then(res => {
       console.log('fetched items', res)
       dispatch({type:FETCH_SUCCESS, payload:res.data})
@@ -75,10 +75,10 @@ export const fetchItem = () =>dispatch => {
 // Add Action
 export const ADD_START ="ADD_START";
 
-export const addItem = (index) => dispatch => {
+export const addItem = addStuff => dispatch => {
   dispatch({ type: ADD_START });
   axiosWithAuth()
-  .post(`techstuff/items`, index)
+  .post(`techstuff/newItem`, addStuff)
   .then(res => {
     console.log('added item', res.data)
     dispatch({type: FETCH_SUCCESS, payload: res.data})
@@ -86,5 +86,20 @@ export const addItem = (index) => dispatch => {
   })
   .catch (err =>{
     dispatch({type: FETCH_FAILURE})
+  });
+}
+
+//Edit Action
+export const EDIT_START="EDIT_START"
+
+export const updateItem = (id) => dispatch => {
+  dispatch({ type: EDIT_START })
+  axiosWithAuth()
+  .put(`/techstuff/${id}`)
+  .then(res => {
+    dispatch({ type: FETCH_SUCCESS, payload: res.data})
+  })
+  .catch(err => {
+    dispatch({ type: FETCH_FAILURE, payload: err.response})
   });
 }

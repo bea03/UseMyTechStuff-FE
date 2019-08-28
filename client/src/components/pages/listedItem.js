@@ -4,8 +4,8 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 class ListedItem extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.handleDayClick = this.handleDayClick.bind(this);
         this.state = {
           rating: 1,
@@ -35,6 +35,7 @@ class ListedItem extends React.Component {
      
       render() {
         const { rating } = this.state;
+        console.log(this.props)
     return (
         <div className='item-page'>
             <div className='item-top'>
