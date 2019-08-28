@@ -2,29 +2,34 @@ import React, { Component } from 'react';
 import ItemCard from './itemCard';
 import { fetchItem } from '../../store/actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 class MyItems extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: [
-                {
-                description: '',
-            }
-        ]
-            
+            data: {
+                name: "",
+                category: "",
+                description: "",
+                price: ""
+            } 
         }
-        console.log('MY ITEMS: ',props.stuff)
+        // console.log('MY ITEMS: ',props)
     }
     componentDidMount(){
         this.props.fetchItem();
     }
     render() {
-        console.log(this.props)
+        console.log('CARD: ',this.state.data)
         return (
-            <div>
-                <ItemCard data={this.props.data}/>
+            <div className='myitems-page'>
+                <div className='myitems-top'>
+            <h4>umts</h4>
+            </div>
+            <h1>My Items</h1>
+                {this.props.data.map(card =>
+                <ItemCard key={card.id} card={card}/>
+                )}
             </div>
         )
     }
@@ -32,7 +37,7 @@ class MyItems extends Component {
 
 
 const mapStateToProps = state =>   ({
-    data: state.itemReducer.data.data,
+    data: state.itemReducer.data,
     fetching: state.itemReducer.fetching,
     error: state.itemReducer.error
    })
