@@ -16,6 +16,7 @@ import CameraList from './components/pages/CameraList.js';
 import ApplianceList from './components/pages/ApplianceList.js';
 import AudioList from './components/pages/AudioList.js';
 import GadgetList from './components/pages/GadgetList.js';
+import ContactForm from './components/pages/ContactForm';
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/appliance" component={ApplianceList} />
         <Route path="/audio" component={AudioList} />
         <Route path="/gadget" component={GadgetList} />
+        <Route path='/contact' component={ContactForm} />
       </Switch>
     </div>
   );

@@ -2,52 +2,82 @@
 .home-container {
     width: 100vw;
   }
-  
+
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+
   }
-  
   .nav-container h4 {
-    align-self: flex-start;
-    text-align: center;
-      margin: 1rem 1rem 0 1rem;
-      padding: 1rem 0.5rem;
-      background: #EAB602;
+    margin-left: .5rem;
   }
-  
+
   .nav-container button {
-    margin: 1rem 1rem;
+    margin: 1rem 0 1rem 1rem;
+
     /* width: 4rem; */
   }
-  
+
+  .nav-container .logo-image {
+    align-self: flex-start;
+    margin: 1rem 0 1rem .25rem;
+    vertical-align: middle;
+  }
+
+  .nav-container h3 {
+    color: #2E2F38;
+    margin-right: 1.5rem;
+  }
+
   .top-content {
     margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
   }
-  
+
+   .top-content h3 {
+     text-align: center;
+    color: #2E2F38;
+  }
+
   .top-content img {
     width: 50%;
     height: 50%;
     width: auto;
     border-radius: 50%;
   }
-  
+
   .top {
     margin: 1rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .top input, button {
     margin-top: 0.5rem;
   }
-  
+
   .top input {
     width: 20rem;
+  }
+
+  .nav-box {
+    padding-top: 1.5rem;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+  }
+
+  .home-container .nav-box h3 {
+    color: #2E2F38;
+    margin: auto;
+    width: 75%;
+    padding-bottom: 5%;
+    text-align: center;
   }
 
   @media(min-width: 800px) {
@@ -56,11 +86,26 @@
       width: 90%;
     }
 
-    .home-nav-box{
-      margin: auto;
-    }
-
-    .footer-nav-box {
-      margin: auto;
+    .nav-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
+
+  /*
+    .nav-container {
+      display: -webkit-box;
+    display: -moz-box;
+    display: box;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    }
+    .nav-container .button-box {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        box-ordinal-group: 1;
+    }
+   */

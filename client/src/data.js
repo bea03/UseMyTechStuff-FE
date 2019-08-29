@@ -52,7 +52,7 @@ const navData = [
       alt: 'customer service icon',
       text: "Customer Service",
       flex: "49%",
-      href: '#'
+      href: '/contact'
     }
   ];
 
@@ -63,7 +63,7 @@ const navData = [
       //src: 'https://via.placeholder.com/125',
       alt: 'tv icon',
       text: "TV & Home Theater",
-      flex: "32%",
+      flex: "30%",
       href: '/tv'
     },
     {
@@ -72,7 +72,7 @@ const navData = [
       //src: 'https://via.placeholder.com/125',
       alt: 'computer icon',
       text: "Desktops & Laptops",
-      flex: "32%",
+      flex: "30%",
       href: '/computer'
     },
     {
@@ -81,7 +81,7 @@ const navData = [
       //src: 'https://via.placeholder.com/125',
       alt: 'camera icon',
       text: "Cameras & Videocameras",
-      flex: "32%",
+      flex: "30%",
       href: '/camera'
     },
     {
@@ -90,7 +90,7 @@ const navData = [
       //src: 'https://via.placeholder.com/125',
       alt: 'fridge icon',
       text: "Appliances",
-      flex: "32%",
+      flex: "30%",
       href: '/appliance'
     },
     {
@@ -99,7 +99,7 @@ const navData = [
       //src: 'https://via.placeholder.com/125',
       alt: 'music note icon',
       text: "Audio",
-      flex: "32%",
+      flex: "30%",
       href: '/audio'
     },
     {
@@ -108,7 +108,7 @@ const navData = [
       //src: 'https://via.placeholder.com/125',
       alt: 'gadgets icon',
       text: "Gadgets",
-      flex: "32%",
+      flex: "30%",
       href: '/gadget'
     }
   ];
@@ -119,7 +119,7 @@ const navData = [
       src: '../../../img/profile-icon.png',
       alt: 'Profile icon',
       text: "Create Profile",
-      flex: "32%",
+      flex: "30%",
       href: '/registration'
       //will need a real link
     },
@@ -128,7 +128,7 @@ const navData = [
       src: '../../../img/answer-questions-icon.png',
       alt: 'answer questions icon',
       text: "Answer Questions",
-      flex: "32%",
+      flex: "30%",
       href: '#'
     },
     {
@@ -136,10 +136,44 @@ const navData = [
       src: '../../../img/list-item-icon.png',
       alt: 'list item icon',
       text: "List Item",
-      flex: "32%",
+      flex: "30%",
       href: '/add'
       //will need a real link
     }
   ]
 
-  export { navData, homeData, footerHome }
+  const middleHome = [
+    {
+      id: 0,
+      src: '../../../img/bluetooth-speaker.png',
+      alt: 'list item icon',
+      title: "Bluetooth party speakers",
+      price: "$52/night",
+      ratingSrc: 'https://via.placeholder.com/25',
+      flex: "28%",
+      href: '/item'
+      //will need a real link
+    },
+    {
+      id: 0,
+      src: '../../../img/monitor.png',
+      alt: 'list item icon',
+      title: "Desktop monitor/screen",
+      price: "$38/night",
+      ratingSrc: 'https://via.placeholder.com/25',
+      flex: "28%",
+      href: '#'
+    },
+    {
+      id: 2,
+      src: '../../../img/Waterproof-camera.png',
+      alt: 'list item icon',
+      title: "Waterproof camera",
+      price: "$86/night",
+      ratingSrc: 'https://via.placeholder.com/25',
+      flex: "28%",
+      href: '#'
+    }
+  ]
+
+  export { navData, homeData, footerHome, middleHome }

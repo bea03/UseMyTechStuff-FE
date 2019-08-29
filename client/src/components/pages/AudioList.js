@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import ItemCardTwo from "./itemCardTwo.js";
 import { audioList } from '../../DeviceLists.js';
+import '../../styles/List.css';
+import { NavLink } from 'react-router-dom';
 
 export default function AudioList () {
   const [audioLister, setAudioLister ]= useState(audioList);
 
   return (
-    <section className="computer-list">
+    <section className="computer-list list-container">
+        <div className="list-top">
+
+
+              
+                  <NavLink to='/'><button>Home</button></NavLink>
+
+        </div>
+
+        <div className="list-content">
         <h3>Audio</h3>
        {audioLister.map(data => <ItemCardTwo
                 key={data.id}
@@ -17,6 +28,7 @@ export default function AudioList () {
                 alt={data.alt}
                 />
             )}
+            </div>
     </section>
   )
 }

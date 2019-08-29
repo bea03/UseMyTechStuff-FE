@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import ItemCardTwo from "./itemCardTwo.js";
 import { cameraList } from '../../DeviceLists.js';
+import '../../styles/List.css';
+import { NavLink } from 'react-router-dom';
 
 export default function CameraList () {
   const [cameraLister, setCameraLister ]= useState(cameraList);
 
   return (
-    <section className="computer-list">
-        <h3>Cameras & Videocameras</h3>
+    <section className="computer-list list-container">
+      <div className="list-top">
+
+
+
+                <NavLink to='/'><button>Home</button></NavLink>
+            
+      </div>
+
+      <div className="list-content">
+      <h3>Cameras & Videocameras</h3>
        {cameraLister.map(data => <ItemCardTwo
                 key={data.id}
                 description={data.description}
@@ -17,6 +28,7 @@ export default function CameraList () {
                 alt={data.alt}
                 />
             )}
+      </div>
     </section>
   )
 }

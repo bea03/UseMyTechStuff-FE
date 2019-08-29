@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/itemCard.css'
 
 const ItemCardTwo = (props) => {
     return (

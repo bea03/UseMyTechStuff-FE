@@ -15,7 +15,8 @@
     color: #F6F6F8;
     text-align: center;
     margin: 1rem auto;
-    width: 85%;
+    width: 300px;
+
   }
 
   .contact-form {
@@ -25,7 +26,7 @@
     max-width: 500px;
   }
 
-  .contact-form button {
+  /* .contact-form button {
     align-self: center;
     width: 40%;
     background-color: #E9960A;
@@ -34,8 +35,8 @@
     margin: 1rem auto;
     color: #F6F6F8;
     border-radius: .25rem;
-  }
-  
+  } */
+
   .contact-form label {
     display: block;
     text-align: left;
@@ -47,6 +48,8 @@
     margin: .25rem;
     background-color: #CCCDD6;
     border: none;
+    width: 300px;
+
   }
 
   @media(min-width: 800px) {
@@ -56,18 +59,9 @@
       }
 
       .contact-page h3 {
-        margin: auto;
-        width: 50%;
-      }
-
-      .contact-page {
-        margin: auto;
-        width: 50%;
-      }
-
-      .contact-page h3 {
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 40px;
+
       }
     }

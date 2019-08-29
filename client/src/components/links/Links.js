@@ -10,6 +10,7 @@ const Links = (props) => {
     flex-shrink: 0;
     flex-basis: ${props.flex};
     margin-bottom: 2%;
+    
   `;
 
   const StyledImg = styled.img`

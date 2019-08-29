@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import ItemCardTwo from "./itemCardTwo.js";
 import { tvList } from '../../DeviceLists.js';
+import '../../styles/List.css';
+import { NavLink } from 'react-router-dom';
 
 export default function TvList () {
   const [tvLister, setTvLister ]= useState(tvList);
 
   return (
     <section className="tv-list">
+    <div className="list-top">
+        
+
+              <NavLink to='/'><button>Home</button></NavLink>
+
+    </div>
+
+    <div className="list-content">
         <h3>TV & Home Theater</h3>
        {tvLister.map(data => <ItemCardTwo
                 key={data.id}
@@ -17,6 +27,7 @@ export default function TvList () {
                 alt={data.alt}
                 />
             )}
+            </div>
     </section>
   )
 }
